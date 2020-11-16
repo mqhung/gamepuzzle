@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Puzzle</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td><img src="https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part3x1.jpg" alt="anhmeo" id="img1"
+                 onclick="changeImg1();"></td>
+    </tr>
+    <tr>
+        <td><img src="https://demo.codegym.vn/8/puzzlegame/img/monkey_part4x1.jpg" alt="anhkhi" id="img2"
+                 onclick="changeImg2();"></td>
+    </tr>
+</table>
+<p id="result"></p>
+</body>
+<script>
+    function changeImg1() {
+        let value = document.getElementById('img1').src;
+        if (value == "https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part3x1.jpg") {
+            document.getElementById('img1').src = "https://demo.codegym.vn/8/puzzlegame/img/monkey_part3x1.jpg";
+        } else {
+            document.getElementById('img1').src = "https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part3x1.jpg";
+        }
+        check();
+    }
+
+    function changeImg2() {
+        let value = document.getElementById('img2').src;
+        if (value == "https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part4x1.jpg") {
+            document.getElementById('img2').src = "https://demo.codegym.vn/8/puzzlegame/img/monkey_part4x1.jpg";
+        } else {
+            document.getElementById('img2').src = "https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part4x1.jpg";
+        }
+        check();
+        //
+        // let img1 = document.getElementById(1);
+        // let img2 = document.getElementById(2);
+        // if(img1 == img2) {
+        //     alert("a");
+        // }
+    }
+    let check = function (){
+        let img1value = 0;
+        let img2value = 0;
+        if (document.getElementById('img1').src == "https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part3x1.jpg"){
+            img1value = 1;
+        } else img1value = 2;
+        if (document.getElementById('img2').src == "https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part4x1.jpg"){
+            img2value = 1;
+        } else img2value = 2;
+        if (img1value == img2value && img1value !=0) {
+            alert("You are right");
+        }
+    }
+
+
+</script>
+</html>
